@@ -2,7 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 
 from dino_runner.utils.constants import RUNNING, RUNNING_SHIELD, RUNNING_HAMMER, JUMPING, JUMPING_SHIELD,\
-    JUMPING_HAMMER,DUCKING, DUCKING_SHIELD, DUCKING_HAMMER, DEFAULT_TYPE, SHIELD_TYPE, HAMMER_TYPE
+    JUMPING_HAMMER, DUCKING, DUCKING_SHIELD, DUCKING_HAMMER, DEFAULT_TYPE, SHIELD_TYPE, HAMMER_TYPE
 
 RUN_IMG = {DEFAULT_TYPE: RUNNING, SHIELD_TYPE: RUNNING_SHIELD, HAMMER_TYPE: RUNNING_HAMMER}
 JUMP_IMG = {DEFAULT_TYPE: JUMPING, SHIELD_TYPE: JUMPING_SHIELD, HAMMER_TYPE: JUMPING_HAMMER}
@@ -35,16 +35,16 @@ class Dinosaur(Sprite):
         self.show_text = False
         self.shield_time_up = 0
         self.hammer_time_up = 0
+        self.show_text = False
+
 
     def update(self, user_input):
-
         if self.running:
             self.run()
         elif self.jump:
             self.dino_jump()
         elif self.dino_duck:
             self.duck()
-
         if user_input[pygame.K_UP] and not self.jump:
             self.running = False
             self.dino_duck = False

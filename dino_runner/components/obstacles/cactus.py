@@ -16,3 +16,4 @@ class Cactus(Obstacle):
         index = random.randint(0, 2)
         super().__init__(image[index])
         self.rect.y = cactus_y_pos
+
