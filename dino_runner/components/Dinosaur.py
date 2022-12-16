@@ -37,7 +37,6 @@ class Dinosaur(Sprite):
         self.hammer_time_up = 0
         self.show_text = False
 
-
     def update(self, user_input):
         if self.running:
             self.run()
